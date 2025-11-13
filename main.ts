@@ -2,12 +2,15 @@ namespace SpriteKind {
     export const ascensor = SpriteKind.create()
     export const coin = SpriteKind.create()
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico26`, function (sprite, location) {
+    mySprite.sayText("*las llaves del colegio al que siempre perteneciste.¡Felicidades!*")
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico4`, function (sprite, location) {
     info.changeLifeBy(-1)
     pause(200)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico25`, function (sprite, location) {
-    mySprite.sayText("Juego totalmente hecho en makecode arcade")
+    mySprite.sayText("*despues de tremenda labor y pasar por esperimentaciones hechas con estudiantes solo por plata haz conseguido algo*")
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico19`, function (sprite, location) {
     mySprite.sayText("gracias por jugar :)")
@@ -141,9 +144,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
         mySprite.vy = -100
     }
+    music.play(music.melodyPlayable(music.jumpUp), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico22`, function (sprite, location) {
-    mySprite.sayText("Idea original:Sebastian Lozada")
+    mySprite.sayText("Beta testers:emylee gaitan/kaled (bola de cañon)/Erminia Mendez/")
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico23`, function (sprite, location) {
     mySprite.sayText("Apartado artistico en general: Sebastian Lozada/Galeria de makecode arcade")
@@ -779,7 +783,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico0`, function (sprite
         `)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico21`, function (sprite, location) {
-    mySprite.sayText("Programacion:Sebastian Lozada")
+    mySprite.sayText("Creado por el equipo de 901")
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico5`, function (sprite, location) {
     info.changeLifeBy(-1)
@@ -791,7 +795,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico14`, function (sprit
     mySprite.setPosition(31, 1)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico24`, function (sprite, location) {
-    mySprite.sayText("Algunas ideas:Isabella Arias/Kellyn Grisales/Miguel Castro/Juan caldas")
+    mySprite.sayText("Agradecimientos especiales:Dairon Baquero/Erminia mendez/I.E.D Sabio Mutis/Universidad EAFIT")
 })
 let mySprite: Sprite = null
 scene.setBackgroundImage(img`
