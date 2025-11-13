@@ -144,15 +144,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
         mySprite.vy = -100
     }
+    music.setVolume(45)
     music.play(music.melodyPlayable(music.jumpUp), music.PlaybackMode.UntilDone)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico22`, function (sprite, location) {
-    mySprite.sayText("Beta testers:emylee gaitan/kaled (bola de cañon)/Erminia Mendez/")
+    mySprite.sayText("Beta testers:emylee gaitan/kaled (bola de cañon)/Erminia Mendez/los chinos de 601")
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico23`, function (sprite, location) {
     mySprite.sayText("Apartado artistico en general: Sebastian Lozada/Galeria de makecode arcade")
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico10`, function (sprite, location) {
+    music.setVolume(46)
+    music.play(music.createSoundEffect(WaveShape.Square, 230, 564, 53, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     tiles.setCurrentTilemap(tilemap`nivel6`)
     mySprite.setPosition(31, 1)
     scene.setBackgroundImage(img`
@@ -279,6 +282,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico10`, function (sprit
         `)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico3`, function (sprite, location) {
+    music.setVolume(46)
+    music.play(music.createSoundEffect(WaveShape.Square, 230, 564, 53, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     tiles.setCurrentTilemap(tilemap`nivel2`)
     mySprite.setPosition(25, 0)
     scene.setBackgroundImage(img`
@@ -405,6 +410,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico3`, function (sprite
         `)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico9`, function (sprite, location) {
+    music.setVolume(46)
+    music.play(music.createSoundEffect(WaveShape.Square, 230, 564, 53, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     tiles.setCurrentTilemap(tilemap`nivel5`)
     mySprite.setPosition(31, 1)
     scene.setBackgroundImage(img`
@@ -531,6 +538,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico9`, function (sprite
         `)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico8`, function (sprite, location) {
+    music.setVolume(46)
+    music.play(music.createSoundEffect(WaveShape.Square, 230, 564, 53, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     tiles.setCurrentTilemap(tilemap`nivel4`)
     mySprite.setPosition(31, 1)
     scene.setBackgroundImage(img`
@@ -656,7 +665,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico8`, function (sprite
         ......................................................................................................ffffffffffffffffffff......................................
         `)
 })
+info.onLifeZero(function () {
+    music.stopAllSounds()
+    music.play(music.stringPlayable("F E D C C C C C ", 500), music.PlaybackMode.UntilDone)
+    game.gameOver(false)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico0`, function (sprite, location) {
+    music.setVolume(46)
+    music.play(music.createSoundEffect(WaveShape.Square, 230, 564, 53, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     tiles.setCurrentTilemap(tilemap`nivel3`)
     mySprite.setPosition(31, 1)
     scene.setBackgroundImage(img`
@@ -790,7 +806,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico5`, function (sprite
     pause(200)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miMosaico14`, function (sprite, location) {
-    music.play(music.createSong(hex`0078000408020105001c000f0a006400f4010a0000040000000000000000000000000000000002240000000400012504000800012c08000c0001220c001000012a100014000120140018000127`), music.PlaybackMode.UntilDone)
+    music.setVolume(46)
+    music.play(music.createSoundEffect(WaveShape.Square, 230, 564, 53, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+    music.play(music.createSong(hex`0078000408020105001c000f0a006400f4010a0000040000000000000000000000000000000002240000000400012504000800012c08000c0001220c001000012a100014000120140018000127`), music.PlaybackMode.InBackground)
     tiles.setCurrentTilemap(tilemap`nivel7`)
     mySprite.setPosition(31, 1)
 })
@@ -938,9 +956,16 @@ mySprite = sprites.create(img`
     . . . f f f f f f . . . 
     . . . . f f f . . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 0)
 tiles.setCurrentTilemap(tilemap`nivel1`)
 scene.cameraFollowSprite(mySprite)
 info.setLife(3)
 mySprite.setPosition(5, 23)
 mySprite.ay = 220
+forever(function () {
+    controller.moveSprite(mySprite, 100, 0)
+})
+forever(function () {
+    music.setVolume(20)
+    music.play(music.createSong(hex`0078000408020206001c00010a006400f401640000040000000000000000000000000000000002600000000400010504000800010508000c0001080c001000010810001400010514001800010818001c00010c1c002000010820002400010524002800010c28002c00010c2c003000010530003400010534003800010c38003c0001083c004000010508001c000e050046006603320000040a002d0000006400140001320002010002600000000400011d04000800011d08000c0001200c001000012010001400011d14001800012018001c0001241c002000012020002400011d24002800012428002c0001242c003000011d30003400011d34003800012438003c0001203c004000011b`), music.PlaybackMode.UntilDone)
+    music.play(music.createSong(hex`0078000408020305001c000f0a006400f4010a00000400000000000000000000000000000000025a0000000400010504000800010508000c0001080c001000010510001400010514001800010c18001c00010820002400010524002800010828002c00010c2c003000010c30003400010834003800010538003c0001083c004000010c07001c00020a006400f401640000040000000000000000000000000000000003300000000400011b0c001000011910001400011920002400011d24002800012028002c00011d38003c00011d3c004000012008001c000e050046006603320000040a002d00000064001400013200020100022a0004000800011b08000c00012014001800011d18001c00011e2c003000012030003400011d34003800011b`), music.PlaybackMode.UntilDone)
+})
