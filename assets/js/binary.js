@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.62/---simulator","cdnUrl":"https://cdn.makecode.com","version":"1.2.0","target":"arcade","targetVersion":"2.0.62","repo":"sebaslome2011-droid/the-chambers-"}
-// total=2795183 new=25.18% cached=70.90% other=3.92%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.62/---simulator","cdnUrl":"https://cdn.makecode.com","version":"1.2.1","target":"arcade","targetVersion":"2.0.62","repo":"sebaslome2011-droid/the-chambers-"}
+// total=2795184 new=25.18% cached=70.90% other=3.92%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -2652,7 +2652,7 @@ switch (step) {
     }
     s.tmp_0 = Sprite_sayText__P2427_mk(s);
     s.tmp_0.arg0 = globals.mySprite___4367;
-    s.tmp_0.arg1 = "*despues de tremenda labor y pasar por esperimentaciones hechas con estudiantes solo por plata haz conseguido algo*";
+    s.tmp_0.arg1 = "*despues de tremenda labor y pasar por experimentaciones hechas con estudiantes solo por plata haz conseguido algo*";
     s.tmp_0.arg2 = undefined;
     s.tmp_0.arg3 = false;
     s.tmp_0.arg4 = 15;
@@ -2951,7 +2951,7 @@ switch (step) {
   case 1:
   case 2:
     s.tmp_0 = music_setVolume__P1621_mk(s);
-    s.tmp_0.arg0 = 73;
+    s.tmp_0.arg0 = 93;
     s.callLocIdx = 104; s.pc = 5; return s.tmp_0;
   case 5:
     r0 = s.retval;
@@ -3873,7 +3873,7 @@ switch (step) {
   case 0:
 
     s.tmp_0 = music_setVolume__P1621_mk(s);
-    s.tmp_0.arg0 = 9;
+    s.tmp_0.arg0 = 70;
     s.callLocIdx = 200; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
@@ -3892,7 +3892,7 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-inline__P7507.info = {"start":130923,"length":4078,"line":973,"column":8,"endLine":976,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+inline__P7507.info = {"start":130923,"length":4079,"line":973,"column":8,"endLine":976,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
 
 function inline__P7507_mk(s) {
     checkStack(s.depth);
